@@ -11,9 +11,9 @@ namespace Circusdieren_2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Dier> dieren = new List<Dier>();
-        Trein trein = new Trein();
-        Random rand = new Random();
+        private List<Dier> _dieren = new List<Dier>();
+        Trein _trein = new Trein();
+        Random _rand = new Random();
         
         public MainWindow()
         {
@@ -22,7 +22,7 @@ namespace Circusdieren_2
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            trein.CreateTrein(dieren);
+            _trein.CreateTrein(_dieren);
             stopwatch.Stop();
             Label_time.Content = Convert.ToString(stopwatch.ElapsedMilliseconds) + " ms";
             Log();
@@ -38,21 +38,21 @@ namespace Circusdieren_2
             for (int i = 0; i < 1000; i++)
             {
 
-                Dier dierI = new Dier(groottes[rand.Next(0, 3)], GetRandomBoolean(), "Dier " + Convert.ToString(i));
-                dieren.Add(dierI);
+                Dier dierI = new Dier(groottes[_rand.Next(0, 3)], GetRandomBoolean(), "Dier " + Convert.ToString(i));
+                _dieren.Add(dierI);
             }
 
 
         }
         public bool GetRandomBoolean()
         {
-            return rand.Next(0, 2) == 0;
+            return _rand.Next(0, 2) == 0;
         }
 
         private void Log()
         {
             
-            foreach(Treinwagon treinwagon in trein.treinwagons) {
+            foreach(Treinwagon treinwagon in _trein.Treinwagons) {
                 List_treinen.Items.Add(treinwagon);
                 Console.WriteLine(treinwagon.ToString());
 }               
@@ -64,7 +64,7 @@ namespace Circusdieren_2
             int index = List_treinen.SelectedIndex;
 
 
-            foreach(Dier dier in trein.treinwagons[index].dierenAanBoord)
+            foreach(Dier dier in _trein.Treinwagons[index].DierenAanBoord)
             {
                 List_dieren.Items.Add(dier);
             }

@@ -4,15 +4,15 @@ namespace Circusdieren_2
 {
     class Treinwagon
     {
-        public List<Dier> dierenAanBoord { get; private set; }
-        public int onBoard { get; private set; }
-        private int nummer;
+        public List<Dier> DierenAanBoord { get; private set; }
+        public int OnBoard { get; private set; }
+        private readonly int _nummer;
 
         public Treinwagon(int nummer)
         {
-            onBoard = 0;
-            dierenAanBoord = new List<Dier>();
-            this.nummer = nummer;
+            OnBoard = 0;
+            DierenAanBoord = new List<Dier>();
+            _nummer = nummer;
         }
 
         public bool CanAddDier(Dier dier)
@@ -29,8 +29,8 @@ namespace Circusdieren_2
         {
             if (CanAddDier(dier))
             {
-                dierenAanBoord.Add(dier);
-                onBoard += dier.grootte;
+                DierenAanBoord.Add(dier);
+                OnBoard += dier.Grootte;
                 return true;
             }
             else
@@ -41,11 +41,11 @@ namespace Circusdieren_2
 
         private bool IsRuimte(Dier dier)
         {
-            if (onBoard == 10)
+            if (OnBoard == 10)
             {
                 return false;
             }
-            else if (dier.grootte + onBoard > 10)
+            else if (dier.Grootte + OnBoard > 10)
             {
                 return false;
             }
@@ -62,18 +62,18 @@ namespace Circusdieren_2
 
             //Vergelijkt of het dier niet opgegeten wordt door een dier aanboord
             //en vice versa
-            foreach(Dier dierAB in dierenAanBoord)
+            foreach(Dier dierAb in DierenAanBoord)
             {
                 //Controleert of het dier aanboord wel of geen vleeseter is
-                if (dierAB.isVleeseter || dier.isVleeseter)
+                if (dierAb.IsVleeseter || dier.IsVleeseter)
                 {
                     //Mogen beide geen vleeseters zijn
-                    if (dierAB.isVleeseter && dier.isVleeseter)
+                    if (dierAb.IsVleeseter && dier.IsVleeseter)
                     {
                         etenelkaar = true;
                     }
                     //Controleert of een planteneter groter is dan een aanwezige vleeseter
-                    else if(dier.grootte > dierAB.grootte && dier.grootte != dierAB.grootte && !dier.isVleeseter)
+                    else if(dier.Grootte > dierAb.Grootte && dier.Grootte != dierAb.Grootte && !dier.IsVleeseter)
                     {
                         etenelkaar = false;
                     }else
@@ -83,7 +83,7 @@ namespace Circusdieren_2
                     }
                 }else
                 {
-                    if(dier.isVleeseter && dierAB.grootte >= dier.grootte)
+                    if(dier.IsVleeseter && dierAb.Grootte >= dier.Grootte)
                     {
                         etenelkaar = true;
                         break;
@@ -100,7 +100,7 @@ namespace Circusdieren_2
 
         public override string ToString()
         {
-            string tostring = "Wagon " + nummer;
+            string tostring = "Wagon " + _nummer;
 
             
 

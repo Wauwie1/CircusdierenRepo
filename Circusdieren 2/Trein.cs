@@ -4,19 +4,19 @@ namespace Circusdieren_2
 {
     class Trein
     {
-        public List<Treinwagon> treinwagons { get; private set; }
-        public List<Dier> alleDieren { get; private set; }
+        public List<Treinwagon> Treinwagons { get; private set; }
+        public List<Dier> AlleDieren { get; private set; }
         public Trein()
         {
-            treinwagons = new List<Treinwagon>();
+            Treinwagons = new List<Treinwagon>();
             Treinwagon treinwagon = new Treinwagon(0);
-            treinwagons.Add(treinwagon);
-            alleDieren = new List<Dier>();
+            Treinwagons.Add(treinwagon);
+            AlleDieren = new List<Dier>();
         }
         public void CreateTrein(List<Dier> dieren)
         {
-            alleDieren = dieren;
-            foreach (Dier dier in alleDieren)
+            AlleDieren = dieren;
+            foreach (Dier dier in AlleDieren)
             {
                AddDier(dier);
             }
@@ -26,17 +26,17 @@ namespace Circusdieren_2
         private void AddDier(Dier dier)
         {
             bool animalIsAdded = false;
-                for(int i = 0; i < treinwagons.Count && !animalIsAdded; i++)
+                for(int i = 0; i < Treinwagons.Count && !animalIsAdded; i++)
                 {
-                    if (treinwagons[i].AddDier(dier))
+                    if (Treinwagons[i].AddDier(dier))
                     {
                         animalIsAdded = true;
                     }
-                    else if (i == treinwagons.Count - 1)
+                    else if (i == Treinwagons.Count - 1)
                     {
                         Treinwagon newtreinwagon = new Treinwagon(i + 1);
-                        treinwagons.Add(newtreinwagon);
-                        treinwagons[i + 1].AddDier(dier);
+                        Treinwagons.Add(newtreinwagon);
+                        Treinwagons[i + 1].AddDier(dier);
                         animalIsAdded = true;
                     }
                 

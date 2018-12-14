@@ -2,29 +2,26 @@
 {
     class Dier
     {
-        // @Todo Properties van maken
-        public int grootte { get; private set; }
-        public bool isVleeseter { get; private set; }
-        private string naam;
+        public int Grootte { get; private set; }
+        public bool IsVleeseter { get; private set; }
+        private readonly string _naam;
 
         public Dier(int grootte, bool isVleeseter, string naam)
         {
-            this.grootte = grootte;
-            this.isVleeseter = isVleeseter;
-            this.naam = naam;
+            Grootte = grootte;
+            IsVleeseter = isVleeseter;
+            _naam = naam;
         }
-
-        //Aparte tostring
 
         public string GetDetails()
         {
-            string detailString = naam + ", " + grootte + " groot, " + "eet vlees: " + isVleeseter + ". ";
+            string detailString = _naam + ", " + Grootte + " groot, " + "eet vlees: " + IsVleeseter + ". ";
 
             return detailString;
         }
         public override string ToString()
         {
-            string tostring = naam + ", " + grootte + " groot, " + "eet vlees: " + isVleeseter + ". ";
+            string tostring = _naam + ", " + Grootte + " groot, " + "eet vlees: " + IsVleeseter + ". ";
             
             return tostring;
         }
