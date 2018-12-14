@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circusdieren", "Circusdieren\Circusdieren.csproj", "{E613B39E-3DDA-4EB9-97C9-6080400C28B1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circusdieren 2", "Circusdieren 2\Circusdieren 2.csproj", "{296A539A-EDF8-4119-AB86-D1ADB2DBDF85}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Containervervoer", "Containervervoer\Containervervoer.csproj", "{B9B1C1D7-6B49-420F-AD49-130C1F6992BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E613B39E-3DDA-4EB9-97C9-6080400C28B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E613B39E-3DDA-4EB9-97C9-6080400C28B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E613B39E-3DDA-4EB9-97C9-6080400C28B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E613B39E-3DDA-4EB9-97C9-6080400C28B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{296A539A-EDF8-4119-AB86-D1ADB2DBDF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{296A539A-EDF8-4119-AB86-D1ADB2DBDF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{296A539A-EDF8-4119-AB86-D1ADB2DBDF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{296A539A-EDF8-4119-AB86-D1ADB2DBDF85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9B1C1D7-6B49-420F-AD49-130C1F6992BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9B1C1D7-6B49-420F-AD49-130C1F6992BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9B1C1D7-6B49-420F-AD49-130C1F6992BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9B1C1D7-6B49-420F-AD49-130C1F6992BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
